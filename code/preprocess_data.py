@@ -83,8 +83,8 @@ def main():
             os.makedirs(DATADIR+name)
     # start by downloading all of the files from Zenodo
     # starting with the signals
-    sig_url = 'https://zenodo.org/record/4614656/files/'
-    fnames = ['top_100k_01.h5','W_100k_01.h5','h3_m174_h80_100k_01.h5']
+    sig_url = 'https://doi.org/10.5281/zenodo.4614656'
+    fnames = ['top_100k_01.h5','W_100k_01.h5','h3_m174_h80_100k_01.h5','h3_m174_h20_100k_01.h5','top_m80_100k_01_new.h5','W_m120_100k_01.h5','W_m174_100k_01.h5','W_m59_100k_01.h5']
     for name in fnames:
         if not os.path.exists(DATADIR+'raw/'+name):
             print(f"Downloading {name} from {sig_url}")
@@ -92,7 +92,7 @@ def main():
             print('')
     # and now the background
     bname = 'qcd_dijet.h5'
-    bkg_url = 'https://zenodo.org/record/4641460/files/'
+    bkg_url = 'https://doi.org/10.5281/zenodo.4641460'
     if not os.path.exists(DATADIR+'raw/'+bname):
         print(f"Downloading {bname} from {bkg_url}")
         download(url=bkg_url+bname, dest_folder=DATADIR+'raw/')
